@@ -28,7 +28,7 @@ async function getTop100() {
     }
 
 
-getTop100()
+// getTop100()
 
 
 
