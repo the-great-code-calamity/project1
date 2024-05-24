@@ -3,10 +3,10 @@
 
 //lyrics api testing variable
 // any spaces must be converted into dashes ie. -
-let artist = 'metallica'
-let title = 'one'
+// let artist = 'metallica'
+// let title = 'one'
 
-function getLyrics() {
+export function getLyrics( artist, title) {
     fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
     .then(function (response){
         console.log(response)
