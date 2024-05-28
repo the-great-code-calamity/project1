@@ -3,12 +3,18 @@
 
 //lyrics api testing variable
 // any spaces must be converted into dashes ie. -
-let artist = 'metallica'
-let title = 'one'
+// let artist = 'Frizk'
+// let title = 'ALL MY FELLAS'
+
 
 function getLyrics() {
-    fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
+    let dashTitle = title.replace(/\s+/g, '-');
+    let dashArtist = artist.replace(/\s+/g, '-');
+    fetch(`https://api.lyrics.ovh/v1/${dashArtist}/${dashTitle}`)
     .then(function (response){
+        if (!response.ok){
+            return ('Lyrics Unavailable!');
+        }
         console.log(response)
         return response.json();
     })
@@ -17,3 +23,5 @@ function getLyrics() {
 
     } )
 }
+
+getLyrics(artist, title);
