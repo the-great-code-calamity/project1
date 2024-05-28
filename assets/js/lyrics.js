@@ -7,10 +7,8 @@
 // let title = 'ALL MY FELLAS'
 
 
-function getLyrics() {
-    let dashTitle = title.replace(/\s+/g, '-');
-    let dashArtist = artist.replace(/\s+/g, '-');
-    fetch(`https://api.lyrics.ovh/v1/${dashArtist}/${dashTitle}`)
+export function getLyrics( artist, title) {
+    fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
     .then(function (response){
         if (!response.ok){
             return ('Lyrics Unavailable!');
