@@ -21,8 +21,8 @@
         <i class="fa-solid fa-headphones-simple fa-fade" style="--fa-beat-fade-opacity: 0.1; --fa-beat-fade-scale: 1.25;"></i>
       </div>
     </div>
-    
-    <div class="grid col-span-1 px-5 ">
+    <!--target this grid-->
+    <div class="grid col-span-1">
       <button class="btn bg-accent" onclick="my_modal_3.showModal()">Get Song Info</button>
         <dialog id="my_modal_3" class="modal">
         <div class="modal-box">
@@ -34,15 +34,15 @@
         </form>
         <label class="form-control w-full max-w-xs">
           <div class="label">
-            <span class="label-text">Artist Name:</span>
+            <span class="label-text" >Artist Name:</span>
           </div>
-          <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+          <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" id="artistNameInput" />
           <div class="label">
-            <span class="label-text">Song Name:</span>
+            <span class="label-text" >Song Name:</span>
           </div>
-          <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+          <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs"id="songNameInput"/>
         </label>
-        <button class="btn btn-primary mt-2 float-right">Search</button>
+        <button class="btn btn-primary mt-2 float-right" id="searchBtn">Search</button>
      </div>
       </dialog>
       </div>
