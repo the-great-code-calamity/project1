@@ -4,7 +4,7 @@
 //lyrics api testing variable
 // any spaces must be converted into dashes ie. -
 // let artist = 'metallica'
-// let title = 'one'
+// let title = 'so what'
 
 export function getLyrics(artist, title) {
     let dashArtist = artist.replace(/\s+/g, '-');
@@ -16,7 +16,7 @@ export function getLyrics(artist, title) {
         return response.json();
     })
     .then(function (data){
-        // console.log(data)
+        console.log(data)
         displayLyrics(data.lyrics)
 
     } )
@@ -27,16 +27,20 @@ export function displayArtistInfo(artist, songTitle) {
     let artistInfoEl = 
     $(`<p> ${artist}</p>
         <p>${songTitle}</p>`
+        // <img src="https://picsum.photos/200">`
     )
+    // random picture generator added to atleast make it look graphical
+    // doesn't change between reloads
     $('#artistInfo').append(artistInfoEl)
 }
 
 function displayLyrics (lyrics) {
     $('#lyrics').html("")
-    // console.log(lyrics)
+    console.log(lyrics)
     // added breaks in the lyrics
-    let newLyrics = lyrics.replace(/\n/g , "<br>");
-    // console.log(newLyrics)
+    let lyrics1 = lyrics.replace(/\n\n/g , "\n");
+    let newLyrics = lyrics1.replace(/\n/g , "<br>");
+    console.log(newLyrics)
     let lyricsEl = 
         $(`<div class="">${newLyrics}</div>`
     )

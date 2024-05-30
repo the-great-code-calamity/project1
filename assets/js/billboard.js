@@ -22,7 +22,7 @@ let date = "2022-10-08"
 
 export async function getTop10() {
     
-    console.log('BILLBOARD FETCHED')
+    console.log('BILLBOARD FETCHED DANGER')
 
     //copy and pasted from rapid api
     try {
@@ -36,30 +36,17 @@ export async function getTop10() {
         console.error(error);
     }
 }
-function something () {
-    console.log('dosomething')
-}
 
 function displayTop10(billboardObj){
-    for(let i = 0 ; i < 10; i++){
+    
+        $('#billboard').html("")
+    
+        for(let i = 0 ; i < 10; i++){
+
         let top10info = 
-        $(`<button class="btn btn-ghost billboardArtist" id="rank${billboardObj[i].rank}">${billboardObj[i].rank}. ${billboardObj[i].artist} ${billboardObj[i].title}</button>`
+        $(`<button class="btn btn-ghost billboardArtist" id="rank${billboardObj[i].rank}">${billboardObj[i].rank}. ${billboardObj[i].artist} - ${billboardObj[i].title}</button>`
         )
         $('#billboard').append(top10info)
-        
-    // $( `#rank${billboardObj[i].rank}` ).on( "click", function(event) {
-    //     console.log(i)
-    //     console.log(event.target.id.replace(/rank/, ''))
-    //     let rank = Number(event.target.id.replace(/rank/, ''))
-    //     return rank;
-    //     // const top10songs = JSON.parse(localStorage.getItem('billboardObj'))
-    //     // console.log(top10songs[(rank - 1)].artist)
-    //     // console.log(top10songs[(rank - 1)].title)
-    //     // let artist = top10songs[(rank - 1)].artist
-    //     // let songTitle =  top10songs[(rank - 1)].title
-    //     // getLyrics(artist, songTitle)
-    //     // displayArtistInfo(artist, songTitle)
-    // } );
 }}
 
 export function billboard(){
@@ -67,12 +54,9 @@ export function billboard(){
     //using local storage to prevent too much fetching of billboard api
 if (top100Obj == null) {
     getTop10()
-    console.log("to storage")
+    console.log("Bill board sent to storage")
 } 
-    console.log('not tostorage')
+    console.log('billboard pulled from storage')
      displayTop10(top100Obj)
     //  console.log(displayTop10(top100Obj))
 }
-
-export function billboardClick() {
-    console.log("helllllp") }
