@@ -3,11 +3,25 @@
 */
 document.getElementById('searchBtn').addEventListener('click', function() {
   
-   const artistName = document.getElementById('artistNameInput').value
-   const songName = document.getElementById('songNameInput').value
+   let artistName = document.getElementById('artistNameInput').value
+   let songName = document.getElementById('songNameInput').value
    console.log('Artist Name:', artistName);
    console.log('Song Name:', songName);
-})
+
+   const newSongInfo = {
+      artistName,
+      songName,
+   };
+
+   let firstSongInfo = JSON.parse(localStorage.getItem('songData')) || [];
+   firstSongInfo.push(newSongInfo);
+  
+   localStorage.setItem('songData', JSON.stringify(firstSongInfo));
+
+   
+});
+
+
 
 
 
