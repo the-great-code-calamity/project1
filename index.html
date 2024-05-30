@@ -84,8 +84,21 @@
           <p>Metallica</p>
           <p>... And justice for all</p>
         </div>
-        <!-- swear stuff below button with 1 row and only 2 columns-->
-        <div id="swearing" class="grid row-span-1 col-span-2 px-5 min-w-24"></div>
+        <!-- swear stuff below button with 1 row and only 3 columns-->
+        <div id="swearing" class="grid row-span-1 col-span-3 px-5 min-w-24 visible">
+          <div class="grid grid-rows-2 grid-cols-3">
+            <div class="grid col-span-3">
+              <input id="swear-range" type="range" min="0" max="100" value="40" class="range range-info range-xs"/>
+            </div>
+            <div class="grid col-span-1">
+              <img src="/assets/images/angel.png" alt="picture of angel"/>
+            </div>
+            <div class="grid col-span-1 col-start-3 justify-items-end">
+              <img src="/assets/images/devil.png" alt="picture of devil"/>
+            </div>
+          </div>
+          
+        </div>
         <div class="grid row-span-1 col-span-3  content-start min-w-24">
           <button class="btn btn-ghost p-0 m-0">Paramore - Aint it fun</button>
           <button class="btn btn-ghost">Metallica - One</button>

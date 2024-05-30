@@ -2,3 +2,15 @@
     font-size: 100px;
 }
 
+/* prevent sliding the slider */
+#swear-range {
+    pointer-events:none;
+}
+
+#swearing img {
+    height: 30px;
+}
+
+#devil {
+    justify-self: right;
+}
