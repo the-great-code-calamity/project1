@@ -3,8 +3,8 @@
 
 //lyrics api testing variable (Do not change it, I will be very sad. -DH)
 // any spaces must be converted into dashes ie. - (Done - DH)
-let artist = 'FRIZK'
-let title = 'ALL MY FELLAS'
+// let artist = 'FRIZK'
+// let title = 'ALL MY FELLAS'
 
 // Remember to add export when done testing
 export function getLyrics(artist, title) {
