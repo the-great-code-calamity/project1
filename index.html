@@ -15,68 +15,6 @@
     <title>TuneTracker</title>
   </head>
   <body>
-<<<<<<< HEAD
-    <div class="grid grid-cols-3 gap-4">
-    <div class="grid col-span-4 bg-slate-950 p-10 text-white w-full">
-       <p class="MAKEMEBIG justify-self-center">Tune Tracker</p> 
-       <div class="fa-2x">
-        <i class="fa-solid fa-headphones-simple fa-fade" style="--fa-beat-fade-opacity: 0.1; --fa-beat-fade-scale: 1.25;"></i>
-      </div>
-    </div>
-    
-    <div class="grid col-span-1 px-5 ">
-      <button id="123" class="btn bg-accent" onclick="my_modal_3.showModal()">Get Song Info</button>
-        <dialog id="my_modal_3" class="modal">
-        <div class="modal-box">
-        <form method="dialog">
-          <div class="fa-2x">
-            <i class="fa-solid fa-headphones-simple fa-fade" style="--fa-beat-fade-opacity: 0.1; --fa-beat-fade-scale: 1.25;"></i>
-          </div>
-        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-        </form>
-        <label class="form-control w-full max-w-xs">
-          <div class="label">
-            <span class="label-text">Artist Name:</span>
-          </div>
-          <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-          <div class="label">
-            <span class="label-text">Song Name:</span>
-          </div>
-          <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-        </label>
-        <button class="btn btn-primary mt-2 float-right">Search</button>
-     </div>
-      </dialog>
-      </div>
-            <div class="grid col-span-3 mr-5">
-              <div id="artistInfo" class="grid col-span-1 bg-gray-600 p-10 text-white "> 
-                
-              <!-- filler information added in javascript -->
-                <!-- <p> Metallica</p>
-                <p> ... And justice for all</p> -->
-              </div>
-              </div>
-          
-            <div id="billboard" class="flex flex-col space-y-0 ml-5 pointer-events-auto">
-              <!-- filler information added in javascript -->
-                  <!-- <button class="btn btn-ghost">Paramore - Aint it fun</button>
-                  <button class="btn btn-ghost">Metallica - One</button>
-                  <button class="btn btn-ghost">Justin Beiber - Baby</button>
-                  <button class="btn btn-ghost">Megadeth - Trust</button>
-                  <button class="btn btn-ghost">Ice Earth - Ghost of freedom</button>
-                  <button class="btn btn-ghost">Nothing More - Jenny</button> -->
-            </div>
-
-            <div id="lyrics" class="grid col-span-3 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-10 text-white mr-5">
-              <!-- filler information added in javascript -->
-            </div>
-   </div> 
-    
-
-    <!-- use type=module for modular js design -->
-
-    <script src="https://kit.fontawesome.com/d4c1148259.js" crossorigin="anonymous"></script>
-=======
     <!-- Use grid layout with 12 colums and auto-sized rows -->
     <div class="grid grid-rows-auto grid-cols-12 gap-4">
 
@@ -140,7 +78,7 @@
         </div>
         
         <!-- artist/song to stretch remainder of columns and use two rows-->
-        <div
+        <div id="artistInfo"
           class="grid row-span-2 col-start-4 col-span-9 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-5 text-white text-white"
         >
           <p>Metallica</p>
@@ -148,19 +86,19 @@
         </div>
         <!-- swear stuff below button with 1 row and only 2 columns-->
         <div id="swearing" class="grid row-span-1 col-span-2 px-5 min-w-24"></div>
-        <div class="grid row-span-1 col-span-3  content-start min-w-24">
-          <button class="btn btn-ghost p-0 m-0">Paramore - Aint it fun</button>
+        <div id="billboard" class="grid row-span-1 col-span-3  content-start min-w-24">
+          <!-- <button class="btn btn-ghost p-0 m-0">Paramore - Aint it fun</button>
           <button class="btn btn-ghost">Metallica - One</button>
           <button class="btn btn-ghost">Justin Beiber - Baby</button>
           <button class="btn btn-ghost">Megadeth - Trust</button>
           <button class="btn btn-ghost">Ice Earth - Ghost of freedom</button>
-          <button class="btn btn-ghost">Nothing More - Jenny</button>
+          <button class="btn btn-ghost">Nothing More - Jenny</button> -->
         </div>
         <!-- lyrics starts 4th column and span remaining + and auto-rows -->
-        <div
+        <div id="lyrics"
         class="grid row-span-auto col-start-4 col-span-9 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-5 text-white"
       >
-          Paroles de la chanson One par Metallica\r<br />(gunshot noises)<br />"Stop
+          <!-- Paroles de la chanson One par Metallica\r<br />(gunshot noises)<br />"Stop
           it no! get you ass outta there! move it! go go go<br />move move!"
           bombs going off<br />(Helicoptor noises)<br />I can't remember
           anything<br />Can't tell if this is true or dream<br />Deep down
@@ -179,7 +117,7 @@
           cannot die<br />Trapped in myself<br />Body my holding cell<br />Landmine
           has taken my sight<br />Taken my speech<br />Taken my hearing<br />Taken
           my arms<br />Taken my legs<br />Taken my soul<br />Left me with a life
-          in hell
+          in hell -->
       </div>
       </div>
 
@@ -188,7 +126,6 @@
       src="https://kit.fontawesome.com/d4c1148259.js"
       crossorigin="anonymous"
     ></script>
->>>>>>> 68b1820030dbb91da57085f27f306610789d7a14
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>

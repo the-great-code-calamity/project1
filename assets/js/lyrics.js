@@ -3,8 +3,6 @@
 
 //lyrics api testing variable
 // any spaces must be converted into dashes ie. -
-// let artist = 'metallica'
-// let title = 'so what'
 
 export function getLyrics(artist, title) {
     let dashArtist = artist.replace(/\s+/g, '-');
