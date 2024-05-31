@@ -9,11 +9,9 @@ import { billboard, getTop10 } from "./billboard.js";
 import { displayArtistInfo, getLyrics } from "./lyrics.js";
 
 //hard coded in for testing
-let artist = 'metallica'
-let songTitle = 'so what'
 
-getLyrics(artist, songTitle)
-displayArtistInfo(artist, songTitle)
+// getLyrics(artist, songTitle)
+// displayArtistInfo(artist, songTitle)
 billboard()
 // console.log(billboard())
 // console.log(rank)
@@ -31,3 +29,25 @@ $( `.billboardArtist` ).on( "click", function(event) {
    getLyrics(artist[0], songTitle)
    displayArtistInfo(artist, songTitle)
 } );
+
+
+document.getElementById("searchBtn").addEventListener("click", function (event) {
+  event.preventDefault();
+  let artistName = document.getElementById("artistNameInput").value;
+  let songName = document.getElementById("songNameInput").value;
+ 
+  //const artistSong = document.getElementById("artist-song");
+//  const button = document.createElement("button");
+//   button.textConte nt = `${artistName} - ${songName}`;
+//   button.classList.add("btn", "btn-ghost");
+//   artistSong.appendChild(button);
+console.log(artistName, songName);
+  getLyrics(artistName, songName);
+  displayArtistInfo(artistName, songName)
+  const modal = document.getElementById("my_modal_3");
+  modal.close();
+});
+
+
+
+ 
