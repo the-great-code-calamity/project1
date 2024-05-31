@@ -8,7 +8,7 @@ export function getLyrics(artist, title) {
     let dashArtist = artist.replace(/\s+/g, '-');
     let dashTitle = title.replace(/\s+/g, '-');
 
-    fetch(`https://api.lyrics.ovh/v1/${dastArtist}/${dashTitle}`)
+    fetch(`https://api.lyrics.ovh/v1/${dashArtist}/${dashTitle}`)
     .then(function (response){
         // console.log(response)
         return response.json();
@@ -32,7 +32,7 @@ export function displayArtistInfo(artist, songTitle) {
 
 function displayLyrics (lyrics) {
     $('#lyrics').html("")
-    let lyrics1 = data.lyrics.replace(/\r\n/g , "\n");
+    let lyrics1 = lyrics.replace(/\r\n/g , "\n");
     // console.log(lyrics1);
     let lyrics2 = lyrics1.replace(/\n\n/g , '\n');
     // console.log(lyrics2);
