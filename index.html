@@ -56,20 +56,20 @@
               </form>
               <label class="form-control w-full max-w-xs">
                 <div class="label">
-                  <span class="label-text" id="artistNameInput">Artist Name:</span>
+                  <span class="label-text" >Artist Name:</span>
                 </div>
                 <input
                   type="text"
                   placeholder="Type here"
-                  class="input input-bordered w-full max-w-xs"
+                  class="input input-bordered w-full max-w-xs" id="artistNameInput"
                 />
                 <div class="label">
-                  <span class="label-text" id="songNameInput">Song Name:</span>
+                  <span class="label-text" >Song Name:</span>
                 </div>
                 <input
                   type="text"
                   placeholder="Type here"
-                  class="input input-bordered w-full max-w-xs"
+                  class="input input-bordered w-full max-w-xs" id="songNameInput"
                 />
               </label>
               <button class="btn btn-primary mt-2 float-right " id="searchBtn">Search</button>
@@ -78,7 +78,7 @@
         </div>
         
         <!-- artist/song to stretch remainder of columns and use two rows-->
-        <div
+        <div id="artistInfo"
           class="grid row-span-2 col-start-4 col-span-9 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-5 text-white text-white"
         >
           <p>Metallica</p>
@@ -86,19 +86,19 @@
         </div>
         <!-- swear stuff below button with 1 row and only 2 columns-->
         <div id="swearing" class="grid row-span-1 col-span-2 px-5 min-w-24"></div>
-        <div class="grid row-span-1 col-span-3  content-start min-w-24">
-          <button class="btn btn-ghost p-0 m-0">Paramore - Aint it fun</button>
+        <div id="billboard" class="grid row-span-1 col-span-3  content-start min-w-24">
+          <!-- <button class="btn btn-ghost p-0 m-0">Paramore - Aint it fun</button>
           <button class="btn btn-ghost">Metallica - One</button>
           <button class="btn btn-ghost">Justin Beiber - Baby</button>
           <button class="btn btn-ghost">Megadeth - Trust</button>
           <button class="btn btn-ghost">Ice Earth - Ghost of freedom</button>
-          <button class="btn btn-ghost">Nothing More - Jenny</button>
+          <button class="btn btn-ghost">Nothing More - Jenny</button> -->
         </div>
         <!-- lyrics starts 4th column and span remaining + and auto-rows -->
-        <div
+        <div id="lyrics"
         class="grid row-span-auto col-start-4 col-span-9 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-5 text-white"
       >
-          Paroles de la chanson One par Metallica\r<br />(gunshot noises)<br />"Stop
+          <!-- Paroles de la chanson One par Metallica\r<br />(gunshot noises)<br />"Stop
           it no! get you ass outta there! move it! go go go<br />move move!"
           bombs going off<br />(Helicoptor noises)<br />I can't remember
           anything<br />Can't tell if this is true or dream<br />Deep down
@@ -117,7 +117,7 @@
           cannot die<br />Trapped in myself<br />Body my holding cell<br />Landmine
           has taken my sight<br />Taken my speech<br />Taken my hearing<br />Taken
           my arms<br />Taken my legs<br />Taken my soul<br />Left me with a life
-          in hell
+          in hell -->
       </div>
       </div>
 
@@ -127,6 +127,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     <script type="module" src="/assets/js/main.js"></script>
+    <script src="./assets/js/logic.js"></script>
   </body>
 </html>
