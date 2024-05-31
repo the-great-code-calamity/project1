@@ -32,7 +32,7 @@ export function displayArtistInfo(artist, songTitle) {
 
 function displayLyrics (lyrics) {
     if (lyrics) {
-        $('#lyrics').html("")
+        $('#lyrics').html("");
         console.log(lyrics)
         // added breaks in the lyrics
         let lyrics1 = lyrics.replace(/\n\n/g , "\n");
@@ -40,13 +40,15 @@ function displayLyrics (lyrics) {
         console.log(newLyrics)
         let lyricsEl = 
             $(`<div class="">${newLyrics}</div>`
-        )
+        );
+        $('#lyrics').append(lyricsEl);
 
     }else{
         let lyricsEl = 
             $(`<div class="">No lyrics found</div>`
-        )
-        $('#lyrics').append(lyricsEl)
+        );
+
+        $('#lyrics').append(lyricsEl);
 
     }
    

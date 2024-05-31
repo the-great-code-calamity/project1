@@ -43,7 +43,7 @@ document.getElementById("searchBtn").addEventListener("click", function (event) 
 //   artistSong.appendChild(button);
 console.log(artistName, songName);
   getLyrics(artistName, songName);
-  displayArtistInfo(artistName, songName);
+  displayArtistInfo(artistName, songName)
   const modal = document.getElementById("my_modal_3");
   modal.close();
 });
