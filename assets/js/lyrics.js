@@ -36,7 +36,7 @@ function displayLyrics (lyrics) {
     // console.log(lyrics1);
     let lyrics2 = lyrics1.replace(/\n\n/g , '\n');
     // console.log(lyrics2);
-    let newLyrics = lyrics2.split(/\n/g , '\n');
+    let newLyrics = lyrics2.split('\n');
 
     for (let i = 0; i < newLyrics.length; i++) {
         let pEl = document.createElement('p')
