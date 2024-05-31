@@ -7,6 +7,7 @@
 // let title = 'one'
 
 export function getLyrics( artist, title) {
+    console.log(artist, title);
     fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
     .then(function (response){
         console.log(response)
