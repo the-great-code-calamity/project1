@@ -30,6 +30,7 @@ export async function getTop10() {
         const result = await response.json();
         console.log(result);
         localStorage.setItem('billboardObj', JSON.stringify(result.chart.entries)) 
+        displayTop10(result.chart.entries)
         return
 
     } catch (error) {
@@ -55,8 +56,9 @@ export function billboard(){
 if (top100Obj == null) {
     getTop10()
     console.log("Bill board sent to storage")
-} 
+} else {
     console.log('billboard pulled from storage')
      displayTop10(top100Obj)
     //  console.log(displayTop10(top100Obj))
+}
 }

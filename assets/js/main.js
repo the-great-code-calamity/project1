@@ -12,7 +12,7 @@ import { displayArtistInfo, getLyrics } from "./lyrics.js";
 
 // getLyrics(artist, songTitle)
 // displayArtistInfo(artist, songTitle)
-billboard()
+// billboard()
 // console.log(billboard())
 // console.log(rank)
 
