@@ -1,9 +1,9 @@
 // any spaces must be converted into dashes ie. -
 
-export function getLyrics(artist, title) {
+export async function getLyrics(artist, title) {
   let dashArtist = artist.replace(/\s+/g, "-");
   let dashTitle = title.replace(/\s+/g, "-");
-
+  let lyrics = await
   fetch(`https://api.lyrics.ovh/v1/${dashArtist}/${dashTitle}`)
     .then(function (response) {
       // console.log(response)
@@ -12,7 +12,9 @@ export function getLyrics(artist, title) {
     .then(function (data) {
       console.log(data);
       displayLyrics(data.lyrics);
+      return data.lyrics;
     });
+    return lyrics;
 }
 
 export function displayArtistInfo(artist, songTitle) {

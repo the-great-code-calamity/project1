@@ -2,22 +2,45 @@
 
 const BASE = `https://www.purgomalum.com/service/json?&fill_text=%2A%2A%2A%2A%2A%2A&text=`;
 
+
 /**
  * Get a count of the number of vulgarities in a song's lyrics
  * @param string lyric -- song lyrics
+ * @param function callback function to update
  * @returns 
  */
 export async function getCount(lyric) {
-  if (!lyric) return -1;
+  if (!lyric) return 0;
+
+  let total = 0
 
   //get the chuncks from splitting text > 2k
-  let chunks = chunk(lyric, null);
-  let total = 0;
-  //iterate the chunks and get swear count
-  let res = chunks.forEach((c) => {
-    total = counter(c, total);
-  });
-  return total;
+  const chunks = chunk(lyric, null);
+  const clen = chunks.length;
+
+  for(let i=0; i< clen; i++){
+    let x = await counter(chunks[i]);
+    total += x;
+    // console.log(total);
+  }
+  // console.log(total)
+  return calcPercentage(total);
+
+}
+
+/** A rough parental guidance algorithm
+ * @param number found profanity instances
+ * *note: the found instances are based on what
+ * was discovered by the profanity api which doesn't 
+ * account for more moderate profanity so this affects
+ * the weight of profanity calc used (i.e. #found is more severe)
+ */
+function calcPercentage(found){
+
+  if(found > 10) return 100;
+  else if(found >= 2 && found >= 10) return 50;
+  else if(found == 1) return 10;
+  return 0;
 }
 
 /**
@@ -26,8 +49,9 @@ export async function getCount(lyric) {
  * @param number total 
  * @returns 
  */
-async function counter(chunk, total) {
-  let t = total || 0;
+async function counter(chunk) {
+
+  let t = 0;
   //call the api with the text
   let txt = await callApi(chunk);
   //use matchall with regex to get accounting
