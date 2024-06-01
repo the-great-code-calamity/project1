@@ -4,8 +4,10 @@
 //lyrics api testing variable
 // any spaces must be converted into dashes ie. -
 
-export function getLyrics( artist, title) {
-    console.log(artist, title);
+export function getLyrics(artist, title) {
+    // let dashArtist = artist.replace(/\s+/g, '-');
+    // let dashTitle = title.replace(/\s+/g, '-');
+    // removed lines 9 and 10 because they reduced stability and works without them
     fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
     .then(function (response){
         // console.log(response)
@@ -25,31 +27,44 @@ export function displayArtistInfo(artist, songTitle) {
         <p>${songTitle}</p>`
         // <img src="https://picsum.photos/200">`
     )
-    // random picture generator added to atleast make it look graphical
-    // doesn't change between reloads
     $('#artistInfo').append(artistInfoEl)
 }
 
 function displayLyrics (lyrics) {
+    console.log("lyrics")
     if (lyrics) {
         $('#lyrics').html("");
-        console.log(lyrics)
-        // added breaks in the lyrics
-        let lyrics1 = lyrics.replace(/\n\n/g , "\n");
-        let newLyrics = lyrics1.replace(/\n/g , "<br>");
-        console.log(newLyrics)
-        let lyricsEl = 
-            $(`<div class="">${newLyrics}</div>`
-        );
-        $('#lyrics').append(lyricsEl);
+        let lyrics1 = lyrics.replace(/\r\n/g , "\n");
+    // console.log(lyrics1);
+        let lyrics2 = lyrics1.replace(/\n\n/g , '\n');
+    // console.log(lyrics2);
+    let newLyrics = lyrics2.split('\n');
+
+    for (let i = 0; i < newLyrics.length; i++) {
+        let pEl = document.createElement('p')
+        pEl.textContent = newLyrics[i]
+       document.getElementById('lyrics').append(pEl); 
+}
+    // console.log(newLyrics);
+//     console.log(lyrics)
+//     // added breaks in the lyrics
+    //     let lyrics1 = lyrics.replace(/\n\n/g , "\n");
+    //     let newLyrics = lyrics1.replace(/\n/g , "<br>");
+    //     console.log(newLyrics)
+    //     let lyricsEl = 
+    //         $(`<div class="">${newLyrics}</div>`
+//         );
+        // $('#lyrics').append(lyricsEl);
 
     }else{
         let lyricsEl = 
             $(`<div class="">No lyrics found</div>`
         );
-
         $('#lyrics').append(lyricsEl);
+
+    //     $('#lyrics').append(lyricsEl);
 
     }
    
+
 }
