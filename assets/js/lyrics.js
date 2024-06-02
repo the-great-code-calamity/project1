@@ -3,11 +3,17 @@
 export async function getLyrics(artist, title) {
   let dashArtist = artist.replace(/\s+/g, "-");
   let dashTitle = title.replace(/\s+/g, "-");
-  let lyrics = await
-  fetch(`https://api.lyrics.ovh/v1/${dashArtist}/${dashTitle}`)
+  try{
+    let lyrics = await
+  
+  fetch(`https://api.lyrics.ovh/v1/${dashArtist}/${dashTitle}`, 
+    {mode: "cors"} 
+  )
     .then(function (response) {
-      // console.log(response)
-      return response.json();
+      if(response.ok)
+        return response.json();
+      else return Promise.reject("Unable to get response from lyric api")
+      
     })
     .then(function (data) {
       console.log(data);
@@ -15,6 +21,10 @@ export async function getLyrics(artist, title) {
       return data.lyrics;
     });
     return lyrics;
+  }catch(err){
+    console.log(err);
+    return "";
+  }
 }
 
 export function displayArtistInfo(artist, songTitle) {
