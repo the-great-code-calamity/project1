@@ -7,7 +7,7 @@ export async function getLyrics(artist, title) {
     let lyrics = await
   
   fetch(`https://api.lyrics.ovh/v1/${dashArtist}/${dashTitle}`, 
-    {"mode": "no-cors"} 
+    {mode: "no-cors"} 
   )
     .then(function (response) {
       if(response.ok)
