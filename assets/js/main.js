@@ -10,8 +10,6 @@ import { displayArtistInfo, getLyrics } from "./lyrics.js";
 billboard();
 // console.log(billboard())
 // console.log(rank)
-
-billboard();
 $(`.billboardArtist`).on("click", function (event) {
   console.log(event.target);
   // console.log(event.target.id.replace(/rank/, ''))

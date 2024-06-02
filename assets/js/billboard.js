@@ -8,7 +8,7 @@ const url = 'https://billboard-api5.p.rapidapi.com/api/charts/hot-100?week=2022-
 const options = {
 	method: 'GET',
 	headers: {
-		'x-rapidapi-key': 'f8ac503a57msh1bcfd46d46d36d8p1ea995jsn5714eaa0fbd8',
+		'x-rapidapi-key': 'a95494d722msh04928c352bd4456p1bc2b0jsn79cf0b3eccdd',
 		'x-rapidapi-host': 'billboard-api5.p.rapidapi.com'
 	}
 };
@@ -30,6 +30,7 @@ export async function getTop10() {
         const result = await response.json();
         console.log(result);
         localStorage.setItem('billboardObj', JSON.stringify(result.chart.entries)) 
+        displayTop10(result.chart.entries)
         return
 
     } catch (error) {
@@ -38,7 +39,6 @@ export async function getTop10() {
 }
 
 function displayTop10(billboardObj){
-    
         $('#billboard').html("")
     
         for(let i = 0 ; i < 10; i++){
@@ -55,8 +55,8 @@ export function billboard(){
 if (top100Obj == null) {
     getTop10()
     console.log("Bill board sent to storage")
-} 
+} else {
     console.log('billboard pulled from storage')
      displayTop10(top100Obj)
     //  console.log(displayTop10(top100Obj))
-}
+} }
