@@ -7,24 +7,24 @@ import { billboard, getTop10 } from "./billboard.js";
 import { displayArtistInfo, getLyrics } from "./lyrics.js";
 
 // displayArtistInfo(artist, songTitle)
-billboard();
+//billboard();
 // console.log(billboard())
 // console.log(rank)
 
-billboard();
-$(`.billboardArtist`).on("click", function (event) {
-  console.log(event.target);
-  // console.log(event.target.id.replace(/rank/, ''))
-  let rank = Number(event.target.id.replace(/rank/, ""));
-  const top10songs = JSON.parse(localStorage.getItem("billboardObj"));
-  // console.log(top10songs[(rank - 1)].artist.split("&"))
-  // console.log(top10songs[(rank - 1)].title)
-  let artist = top10songs[rank - 1].artist.split("&");
-  let songTitle = top10songs[rank - 1].title;
+// billboard();
+// $(`.billboardArtist`).on("click", function (event) {
+//   console.log(event.target);
+//   // console.log(event.target.id.replace(/rank/, ''))
+//   let rank = Number(event.target.id.replace(/rank/, ""));
+//   const top10songs = JSON.parse(localStorage.getItem("billboardObj"));
+//   // console.log(top10songs[(rank - 1)].artist.split("&"))
+//   // console.log(top10songs[(rank - 1)].title)
+//   let artist = top10songs[rank - 1].artist.split("&");
+//   let songTitle = top10songs[rank - 1].title;
 
-  setSwearMeter(artist[0], songTitle);
-  displayArtistInfo(artist, songTitle);
-});
+//   setSwearMeter(artist[0], songTitle);
+//   displayArtistInfo(artist, songTitle);
+// });
 
 
 document
