@@ -26,19 +26,28 @@ $(`.billboardArtist`).on("click", function (event) {
   displayArtistInfo(artist, songTitle);
 });
 
+
 document
+
   .getElementById("searchBtn")
   .addEventListener("click", async function (event) {
     //event.preventDefault();
     let artistName = document.getElementById("artistNameInput").value;
     let songName = document.getElementById("songNameInput").value;
 
+    document.getElementById('artistNameInput').value = '';
+    document.getElementById('songNameInput').value = '';
+
+
     console.log(artistName, songName);
     setSwearMeter(artistName, songName);
     displayArtistInfo(artistName, songName);
     const modal = document.getElementById("my_modal_3");
     modal.close();
+
+    
   });
+
 
 async function setSwearMeter(artistName, songName){
   //need the actual lyrics to feed to the profanity filter api
@@ -69,3 +78,4 @@ let updateSwearRange = (count)=> {
   range.attr("value", count);
   console.log(range.attr("value"));
 }
+
