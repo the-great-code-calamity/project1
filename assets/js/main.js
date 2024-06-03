@@ -6,7 +6,7 @@ import { getCount } from "./swears.js";
 import { billboard, getTop10 } from "./billboard.js";
 import { displayArtistInfo, getLyrics } from "./lyrics.js";
 
- displayArtistInfo(artist, songTitle)
+//  displayArtistInfo(artist, songTitle)
 billboard();
 // console.log(billboard())
 // console.log(rank)
