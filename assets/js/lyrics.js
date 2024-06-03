@@ -3,25 +3,22 @@
 export async function getLyrics(artist, title) {
   let dashArtist = artist.replace(/\s+/g, "-");
   let dashTitle = title.replace(/\s+/g, "-");
-  try{
-    let lyrics = await
-  
-  fetch(`https://api.lyrics.ovh/v1/${dashArtist}/${dashTitle}`, 
-    {mode: "cors"} 
-  )
-    .then(function (response) {
-      if(response.ok)
-        return response.json();
-      else return Promise.reject("Unable to get response from lyric api")
-      
-    })
-    .then(function (data) {
-      console.log(data);
-      displayLyrics(data.lyrics);
-      return data.lyrics;
-    });
+  try {
+    let lyrics = await fetch(
+      `https://api.lyrics.ovh/v1/${dashArtist}/${dashTitle}`,
+      { mode: "cors" }
+    )
+      .then(function (response) {
+        if (response.ok) return response.json();
+        else return Promise.reject("Unable to get response from lyric api");
+      })
+      .then(function (data) {
+        console.log(data);
+        displayLyrics(data.lyrics);
+        return data.lyrics;
+      });
     return lyrics;
-  }catch(err){
+  } catch (err) {
     console.log(err);
     return "";
   }
@@ -38,7 +35,9 @@ export function displayArtistInfo(artist, songTitle) {
 function displayLyrics(lyrics) {
   if (lyrics) {
     $("#lyrics").html("");
-    let lyrics1 = lyrics.replace(/\r\n/g, "\n");
+    let cleanLyrics = lyrics.replace(/Paroles de la chanson.*$/m, "\n");
+    // console.log(cleanLyrics);
+    let lyrics1 = cleanLyrics.replace(/\r\n/g, "\n");
     // console.log(lyrics1);
     let lyrics2 = lyrics1.replace(/\n\n/g, "\n");
     // console.log(lyrics2);
@@ -54,3 +53,5 @@ function displayLyrics(lyrics) {
     $("#lyrics").append(lyricsEl);
   }
 }
+
+
